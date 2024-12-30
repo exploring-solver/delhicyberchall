@@ -1,9 +1,8 @@
-// Mobile App Screens (React Native + React Native Paper)
+// screens/mobile/index.js
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Card, Title, Paragraph, Button, Surface } from 'react-native-paper';
 
-// Home Screen - Main monitoring screen
 export const HomeScreen = () => {
   return (
     <View style={styles.container}>
@@ -43,7 +42,6 @@ export const HomeScreen = () => {
   );
 };
 
-// Alert Screen - Shows active threats and warnings
 export const AlertScreen = () => {
   return (
     <View style={styles.container}>
@@ -62,12 +60,10 @@ export const AlertScreen = () => {
   );
 };
 
-// Report Screen - For users to submit scam reports
 export const ReportScreen = () => {
   return (
     <View style={styles.container}>
       <Title>Report Scam Attempt</Title>
-      {/* Form components for reporting */}
     </View>
   );
 };
@@ -90,5 +86,5 @@ const styles = StyleSheet.create({
   },
   warningText: {
     color: '#D32F2F',
-  }
+  },
 });

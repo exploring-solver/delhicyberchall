@@ -12,8 +12,8 @@ const Stack = createStackNavigator();
 const HomeStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen 
-        name="HomeMain" 
+      <Stack.Screen
+        name="HomeMain"
         component={HomeScreen}
         options={{ headerTitle: 'Protection Dashboard' }}
       />
@@ -26,8 +26,8 @@ const HomeStack = () => {
 const AlertStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen 
-        name="AlertsMain" 
+      <Stack.Screen
+        name="AlertsMain"
         component={AlertScreen}
         options={{ headerTitle: 'Active Alerts' }}
       />
@@ -39,8 +39,8 @@ const AlertStack = () => {
 const ReportStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen 
-        name="ReportMain" 
+      <Stack.Screen
+        name="ReportMain"
         component={ReportScreen}
         options={{ headerTitle: 'Report Scam' }}
       />
@@ -48,30 +48,28 @@ const ReportStack = () => {
   );
 };
 
-export const AppNavigator = () => {
+export default function AppNavigator() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
 
-            if (route.name === 'Home') {
-              iconName = 'home';
-            } else if (route.name === 'Alerts') {
-              iconName = 'bell';
-            } else if (route.name === 'Report') {
-              iconName = 'alert-circle';
-            }
+          if (route.name === 'Home') {
+            iconName = 'home';
+          } else if (route.name === 'Alerts') {
+            iconName = 'bell';
+          } else if (route.name === 'Report') {
+            iconName = 'alert-circle';
+          }
 
-            return <IconButton icon={iconName} size={size} color={color} />;
-          },
-        })}
-      >
-        <Tab.Screen name="Home" component={HomeStack} />
-        <Tab.Screen name="Alerts" component={AlertStack} />
-        <Tab.Screen name="Report" component={ReportStack} />
-      </Tab.Navigator>
-    </NavigationContainer>
+          return <IconButton icon={iconName} size={size} color={color} />;
+        },
+      })}
+    >
+      <Tab.Screen name="Home" component={HomeStack} />
+      <Tab.Screen name="Alerts" component={AlertStack} />
+      <Tab.Screen name="Report" component={ReportStack} />
+    </Tab.Navigator>
   );
 };
