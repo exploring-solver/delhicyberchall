@@ -17,11 +17,15 @@ import {
   List as ListIcon,
   Search as SearchIcon,
 } from '@mui/icons-material';
-import { 
-  AnalyticsDashboard, 
-  ReportedNumbersScreen, 
-  NumberDetailsScreen 
-} from './components/AnalyticsDashboard';
+import Dashboard from './pages/Dashboard';
+import ReportedNumbers from './pages/ReportedNumbers';
+import NumberDetails from './pages/NumberDetails';
+import SearchScreen from './pages/SearchScreen';
+// import { 
+//   AnalyticsDashboard, 
+//   ReportedNumbersScreen, 
+//   NumberDetailsScreen 
+// } from './components/AnalyticsDashboard';
 
 const drawerWidth = 240;
 
@@ -35,7 +39,7 @@ const App = () => {
         <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
           <Toolbar>
             <Typography variant="h6" noWrap component="div">
-              Scam Prevention Dashboard
+              RakshaNetra Dashboard
             </Typography>
           </Toolbar>
         </AppBar>
@@ -81,9 +85,9 @@ const App = () => {
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
           <Toolbar /> {/* This provides spacing below the AppBar */}
           <Routes>
-            <Route path="/" element={<AnalyticsDashboard />} />
-            <Route path="/reported-numbers" element={<ReportedNumbersScreen />} />
-            <Route path="/number/:id" element={<NumberDetailsScreen />} />
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/reported-numbers" element={<ReportedNumbers />} />
+            <Route path="/number/:id" element={<NumberDetails />} />
             <Route path="/search" element={<SearchScreen />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
@@ -94,9 +98,9 @@ const App = () => {
 };
 
 // Additional components referenced in routes
-const SearchScreen = () => (
-  <Typography variant="h4">Search Numbers</Typography>
-);
+// const SearchScreen = () => (
+//   <Typography variant="h4">Search Numbers</Typography>
+// );
 
 const NotFound = () => (
   <Typography variant="h4">404 - Page Not Found</Typography>
